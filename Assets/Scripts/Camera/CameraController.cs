@@ -15,21 +15,38 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) && readMapGrid.floorGrid[(int)transform.position.x, (int)transform.position.z + 1] == null)
+        int a = Input.GetKeyDown(KeyCode.A) ? 1 : 0;
+        int d = Input.GetKeyDown(KeyCode.D) ? 1 : 0;
+        int w = Input.GetKeyDown(KeyCode.W) ? 1 : 0;
+        int s = Input.GetKeyDown(KeyCode.S) ? 1 : 0;
+        int horizontal = d - a;
+        int vertical = w - s;
+        switch(direction)
         {
-            transform.position += Vector3.forward * distanceUnit;
-        }
-        if (Input.GetKeyDown(KeyCode.S) && readMapGrid.floorGrid[(int)transform.position.x, (int)transform.position.z - 1] == null)
-        {
-            transform.position += Vector3.back * distanceUnit;
-        }
-        if (Input.GetKeyDown(KeyCode.A) && readMapGrid.floorGrid[(int)transform.position.x - 1, (int)transform.position.z] == null)
-        {
-            transform.position += Vector3.left * distanceUnit;
-        }
-        if (Input.GetKeyDown(KeyCode.D) && readMapGrid.floorGrid[(int)transform.position.x + 1, (int)transform.position.z] == null)
-        {
-            transform.position += Vector3.right * distanceUnit;
+            case EnumDefinition.CameraFacingDirection.Forward:
+                if(readMapGrid.wallGrid[(int)(transform.position.x + horizontal), (int)(transform.position.z + vertical)] == null)
+                {
+                    transform.position += new Vector3(horizontal, 0, vertical) * distanceUnit;
+                }
+                break;
+            case EnumDefinition.CameraFacingDirection.Right:
+                if (readMapGrid.wallGrid[(int)(transform.position.x + vertical), (int)(transform.position.z - horizontal)] == null)
+                {
+                    transform.position += new Vector3(vertical, 0, -horizontal) * distanceUnit;
+                }
+                break;
+            case EnumDefinition.CameraFacingDirection.Backward:
+                if (readMapGrid.wallGrid[(int)(transform.position.x - horizontal), (int)(transform.position.z - vertical)] == null)
+                {
+                    transform.position += new Vector3(-horizontal, 0, -vertical) * distanceUnit;
+                }
+                break;
+            case EnumDefinition.CameraFacingDirection.Left:
+                if (readMapGrid.wallGrid[(int)(transform.position.x - vertical), (int)(transform.position.z + horizontal)] == null)
+                {
+                    transform.position += new Vector3(-vertical, 0, horizontal) * distanceUnit;
+                }
+                break;
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {

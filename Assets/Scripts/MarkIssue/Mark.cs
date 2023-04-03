@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Mark : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerMark
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        bool isSplited;
+        int splitCount;
+        PlayerMark main;
+        List<PlayerMark> subMarks;
     }
 }
