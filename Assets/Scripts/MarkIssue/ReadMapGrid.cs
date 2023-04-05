@@ -18,9 +18,6 @@ public class ReadMapGrid : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-    private void Start()
-    {
         floorGrid = new GameObject[maxGridX, maxGridZ];
         wallGrid = new GameObject[maxGridX, maxGridZ];
         for(int i = 0;i < floorParent.transform.childCount; i++)

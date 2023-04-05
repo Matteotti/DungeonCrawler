@@ -28463,7 +28463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &445411066
 Transform:
   m_ObjectHideFlags: 0
@@ -106699,6 +106699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1616393726}
   - component: {fileID: 1616393727}
+  - component: {fileID: 1616393728}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -106737,6 +106738,26 @@ MonoBehaviour:
   distanceUnit: 1
   readMapGrid: {fileID: 647621950}
   direction: 0
+--- !u!114 &1616393728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616393725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4933d3d86a5120b4ba33d311a41831ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentPosition: {x: 0, y: 0}
+  lastPosition: {x: 0, y: 0}
+  isWind: 0
+  isDebug: 0
+  isLog: 0
+  common: {fileID: 2100000, guid: f1aa951cfb5b41b408f9e6547934157e, type: 2}
+  main: {fileID: 2100000, guid: cbe75c77f38c6474585fb17e6a196db3, type: 2}
+  usual: {fileID: 2100000, guid: f24c5135345bc5a43a78d8ed0b02f743, type: 2}
 --- !u!1 &1617966232
 GameObject:
   m_ObjectHideFlags: 0
