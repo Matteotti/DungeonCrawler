@@ -7,7 +7,18 @@ public class ReadMapGrid : MonoBehaviour
     public int maxGridX, maxGridZ;
     public GameObject[,] floorGrid, wallGrid;
     public GameObject floorParent, wallParent;
-
+    public static ReadMapGrid instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
         floorGrid = new GameObject[maxGridX, maxGridZ];
