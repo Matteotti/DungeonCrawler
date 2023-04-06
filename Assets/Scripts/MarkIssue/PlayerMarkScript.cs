@@ -11,9 +11,9 @@ public class PlayerMarkScript : MarkBase
     public bool isLog = false;
     public Material common, main, usual;
     #endregion
-    void Start()
+    public override void Start()
     {
-        floorGrid = ReadMapGrid.instance.floorGrid;
+        base.Start();
         currentPosition = new Vector2Int(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.z));
         lastPosition = currentPosition;
         InitMark(currentPosition);

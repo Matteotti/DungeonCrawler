@@ -4,17 +4,18 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Floor
   - Wall
+  - FloorWithoutSnow
+  - FloorWithSnow
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
+  - Floor
+  - Wall
   - 
   - 
   - 

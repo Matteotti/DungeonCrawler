@@ -19,12 +19,16 @@ public class MarkBase : MonoBehaviour
     public PlayerMark initialMark = null;
     public GameObject[,] floorGrid = null;
     private PlayerMark currentMark = new PlayerMark();
+    public virtual void Start()
+    {
+        floorGrid = ReadMapGrid.instance.floorGrid;
+    }
     public void InitMark(Vector2Int position)
     {
         currentMark = new PlayerMark();
         currentMark.position = position;
         currentMark.mark = floorGrid[position.x, position.y];
-        currentMark.isSnow = currentMark.mark.CompareTag("Snow");
+        currentMark.isSnow = currentMark.mark.CompareTag("FloorWithSnow");
         initialMark = currentMark;
         playerMarks.Add(currentMark);
     }
@@ -69,12 +73,9 @@ public class MarkBase : MonoBehaviour
             temp2.lastMark = currentMark;
             currentMark.main = temp2;
             currentMark = temp2;
-            currentMark.isSnow = currentMark.mark.CompareTag("Snow");
+            currentMark.isSnow = currentMark.mark.CompareTag("FloorWithSnow");
         }
     }
-    /// <summary>
-    /// Called After Player Arrive At LastSplitMark
-    /// </summary>
     public void UpdateMarkRoute()
     {
         if (lastSplitMark == null)

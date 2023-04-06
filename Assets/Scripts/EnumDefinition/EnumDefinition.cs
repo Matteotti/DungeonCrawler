@@ -17,4 +17,10 @@ public class EnumDefinition : MonoBehaviour
         Wall,
         Ceiling,
     }
+    public enum EnemyVisionState
+    {
+        PlayerBeSeen,
+        PlayerRouteBeSeen,
+        SeeNothing,
+    }
 }
