@@ -23,4 +23,11 @@ public class EnumDefinition : MonoBehaviour
         PlayerRouteBeSeen,
         SeeNothing,
     }
+    public enum EnemyMoveState
+    {
+        MoveToPlayer,
+        MoveToPlayerRoute,
+        MoveAlongPlayerRoutePath,
+        MoveRandomly,
+    }
 }

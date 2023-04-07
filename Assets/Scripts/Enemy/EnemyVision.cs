@@ -69,7 +69,7 @@ public class EnemyVision : MonoBehaviour
                     break;
                 }
             }
-            Debug.DrawRay(ray.origin, ray.direction * range, Color.red, 1);
+            //Debug.DrawRay(ray.origin, ray.direction * range, Color.red, 1);
         }
     }
 }

@@ -18,7 +18,7 @@ public class MarkBase : MonoBehaviour
     public PlayerMark lastSplitMark = null;
     public PlayerMark initialMark = null;
     public GameObject[,] floorGrid = null;
-    private PlayerMark currentMark = new PlayerMark();
+    public PlayerMark currentMark = new PlayerMark();
     public virtual void Start()
     {
         floorGrid = ReadMapGrid.instance.floorGrid;
